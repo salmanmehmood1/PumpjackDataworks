@@ -1,0 +1,40 @@
+Quadratic Formula
+
+Test case 1
+
+Input:
+a: 1
+b: 2
+c: 3
+
+Expected output:
+Roots are complex
+-0.4444444444444444 + i0.7617394000445604
+-0.4444444444444444 - i13.711309200802088
+
+Test case 2
+
+Input:
+a: 2
+b: 2
+c: 2
+Expected output:
+Roots are complex -0.5 + i0.8660254037844386 -0.5 - i3.4641016151377544
+
+Test case 3
+
+Input:
+a: 0
+b: 2
+c: 3
+Expected output:
+Invalid
+
+Test case 4
+
+Input:
+a: r
+b: s
+c: t
+Expected output:
+wrong data type

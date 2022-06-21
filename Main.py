@@ -181,8 +181,6 @@ def quadraticformula():
         print('root1 = {0}+{1}i'.format(real,imaginary))
         print('root2 = {0}+{1}i'.format(real,imaginary))
         
-def quadraticformula():
-    return "thursday"
 def laplaceformula():
     Nx = input("Enter Nx : ")
     Ny = input("Enter Ny : ")

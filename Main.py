@@ -217,4 +217,4 @@ def switch(formula):
 
 if __name__ == "__main__":
     formula = float(input('Enter choice: '))
-    print(switch(formula))
+    switch(formula)

@@ -1,0 +1,12 @@
+Test Case Pass:
+
+Nx = 2 , Ny=2 , maxiter = 10
+Nx = 100 Ny = 100 maxiter = 1000
+Nx = 74 , Ny = 74 , maxiter = 80
+Nx = 0 , Ny = 0 , maxiter = 10
+
+Test Case Fail:
+
+Nx = 7 , Ny= 1 , maxiter = 20
+Nx = 120 Ny = 40 maxiter = 999
+Nx = 19 , Ny = 75 , maxiter = 90

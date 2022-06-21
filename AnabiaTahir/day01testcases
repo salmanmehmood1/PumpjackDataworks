@@ -1,0 +1,13 @@
+test cases for day 01:
+
+test case1:
+partial derivative for x*x+2*x*y at x=2 and y=1
+ans=6
+
+test case2:
+partial derivative for sin(x*y)-x*y*y at x=pi and y=1
+ans =-1.99
+
+test case 3:
+partial derivative for ((6*x)-y)^4 at x=1 and y=4
+ans=192.086

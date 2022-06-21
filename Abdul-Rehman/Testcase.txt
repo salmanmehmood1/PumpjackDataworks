@@ -1,0 +1,39 @@
+****** Test Cases for Recent Days *********
+
+DAY 1:
+
+
+Input:
+
+CONSTANT VALUES:
+N=5;
+X=4
+
+....Infinite Series ......
+
+
+
+DAY2:
+
+
+Input:
+
+P=3;
+
+OUTPUT:
+
+GRAPH;
+
+INPUT:
+
+P=-2;
+
+OUTPUT:
+
+GRAPH;
+
+***** Result ****
+
+All test cases passed due to constants values....
+
+

@@ -5,6 +5,32 @@ import (
   "math"
 	"math/cmplx"
 )
+
+type Block struct {
+    Try     func()
+    Catch   func(Exception)
+    Finally func()
+}
+ 
+type Exception interface{}
+ 
+func Throw(up Exception) {
+    panic(up)
+}
+func (tcf Block) Do() {
+    if tcf.Finally != nil {
+ 
+        defer tcf.Finally()
+    }
+    if tcf.Catch != nil {
+        defer func() {
+            if r := recover(); r != nil {
+                tcf.Catch(r)
+            }
+        }()
+    }
+    tcf.Try()
+}
 //import libraries as not importing so copied
 func fft(a []complex128, n int) []complex128 {
 	x := make([]complex128, n)
@@ -55,7 +81,7 @@ func FFT(x []complex128, n int) []complex128 {
 }
 
 
-func fourier_series(){
+func main(){
 x0 := []float64{
 		5,
 		32,
@@ -79,8 +105,22 @@ x0 := []float64{
 	for k := 0; k < n; k++ {
 		x[k] = complex(x0[k], 0.0)
 	}
-
-	y := FFT(x, n)
+  y := FFT(x, n)
+	Block{
+        Try: func() {
+            y := FFT(x, n)
+	if(y==nil){
+            Throw("Oh,...sh...")
+	}
+        },
+        Catch: func(e Exception) {
+            fmt.Printf("Caught %v\n", e)
+        },
+        Finally: func() {
+            fmt.Println("Finally...")
+        },
+    }.Do()
+	
 	
 
 	fmt.Println(" K   DATA  FOURIER TRANSFORM  ")

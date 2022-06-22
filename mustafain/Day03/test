@@ -1,0 +1,9 @@
+------pass test cases:
+1) a=2 , b=10 output=144
+2) a=2 , b=1 output=9
+3) a=2 , b=2 output=16
+4) a=2 , b=3 output=25
+5) a=3 , b=3 output=36
+
+------fail test cases:
+if a or b is a string or a character.

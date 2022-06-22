@@ -9,6 +9,39 @@ import (
 
 // Abdul Rehman
 
+package main
+
+import (
+	"fmt"
+  "math"
+	"math/cmplx"
+)
+
+type Block struct {
+    Try     func()
+    Catch   func(Exception)
+    Finally func()
+}
+ 
+type Exception interface{}
+ 
+func Throw(up Exception) {
+    panic(up)
+}
+func (tcf Block) Do() {
+    if tcf.Finally != nil {
+ 
+        defer tcf.Finally()
+    }
+    if tcf.Catch != nil {
+        defer func() {
+            if r := recover(); r != nil {
+                tcf.Catch(r)
+            }
+        }()
+    }
+    tcf.Try()
+}
 //import libraries as not importing so copied
 func fft(a []complex128, n int) []complex128 {
 	x := make([]complex128, n)
@@ -83,8 +116,22 @@ x0 := []float64{
 	for k := 0; k < n; k++ {
 		x[k] = complex(x0[k], 0.0)
 	}
-
-	y := FFT(x, n)
+  y := FFT(x, n)
+	Block{
+        Try: func() {
+            y := FFT(x, n)
+	if(y==nil){
+            Throw("Oh,...sh...")
+	}
+        },
+        Catch: func(e Exception) {
+            fmt.Printf("Caught %v\n", e)
+        },
+        Finally: func() {
+            fmt.Println("Finally...")
+        },
+    }.Do()
+	
 	
 
 	fmt.Println(" K   DATA  FOURIER TRANSFORM  ")
@@ -93,7 +140,6 @@ x0 := []float64{
 			k, x0[k], real(y[k]), imag(y[k]))
 	}
   }
-
 //end Abdul rehman
 var choice int
 //--------- my function --mustafain
@@ -123,7 +169,7 @@ fmt.Scanln(&choice)
 
 switch choice {
 case 1:
-    fmt.Println("Monday")
+	fourier_series()
 case 2:
     fmt.Println("Tuesday")
 case 3:

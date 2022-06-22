@@ -225,6 +225,37 @@ var a, b, c, root1, root2, imaginary, discriminant float64
     }
 }
 //erum
+
+//salman
+
+func Laplace(Nx int, Ny int, iter int) {
+	var temp, diff float32
+	if Nx == Ny {
+		for i := 1; i < Ny-1; i++ {
+			for j := 1; j < Ny-1; j++ {
+				temp = 0.25 * float32(i*j)
+				diff = (temp - float32(Nx)) / 100
+			}
+		}
+	}
+	iter = iter - 1
+	fmt.Print("Laplace Output : ", diff)
+
+}
+
+func laplace_transform() {
+	var Nx, Ny, iter int
+	fmt.Print("Enter Nx: ")
+	fmt.Scan(&Nx)
+	fmt.Print("Enter Ny: ")
+	fmt.Scan(&Ny)
+	fmt.Print("Enter iteration No: ")
+	fmt.Scan(&iter)
+	Laplace(Nx, Ny, iter)
+}
+
+
+//salman
 func main() {
 
 fmt.Println("Enter your choice in number: ")
@@ -242,6 +273,8 @@ case 4:
     quadraticformula()
 case 5:
     slope1()
+case 6:
+	laplace_transform()
 default:
     fmt.Println("Invalid")
 }

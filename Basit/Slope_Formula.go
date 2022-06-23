@@ -1,9 +1,13 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "math"
+)
 
 func Slope_Formula(x11 float64,x22 float64,y11 float64,y22 float64) float64 {
     var gradient float64
+	if((x22-x11)==0){return math.Inf(-1)}
     gradient=(y22-y11)/(x22-x11)
     return gradient
 }
@@ -26,5 +30,7 @@ func slope1() {
 func main(){
     slope1()
 }
+
+
 
 

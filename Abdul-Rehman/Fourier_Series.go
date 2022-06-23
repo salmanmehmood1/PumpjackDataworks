@@ -81,7 +81,7 @@ func FFT(x []complex128, n int) []complex128 {
 }
 
 
-func main(){
+func fourier_series(na int) int{
 x0 := []float64{
 		5,
 		32,
@@ -105,10 +105,12 @@ x0 := []float64{
 	for k := 0; k < n; k++ {
 		x[k] = complex(x0[k], 0.0)
 	}
+
   y := FFT(x, n)
 	Block{
         Try: func() {
             y := FFT(x, n)
+		if(na==0){y=nil}
 	if(y==nil){
             Throw("Oh,...sh...")
 	}
@@ -128,4 +130,8 @@ x0 := []float64{
 		fmt.Printf("%2d %6.1f  %8.3f%8.3f   \n",
 			k, x0[k], real(y[k]), imag(y[k]))
 	}
+if(na==0){
+return 0;
+}
+return 1;
   }

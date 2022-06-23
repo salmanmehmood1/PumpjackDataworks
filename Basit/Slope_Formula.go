@@ -1,16 +1,20 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "math"
+)
 
-func Slope_Formula(x11 float32,x22 float32,y11 float32,y22 float32) float32 {
-    var gradient float32
+func Slope_Formula(x11 float64,x22 float64,y11 float64,y22 float64) float64 {
+    var gradient float64
+	if((x22-x11)==0){return math.Inf(-1)}
     gradient=(y22-y11)/(x22-x11)
     return gradient
 }
 func slope1() {
   
-    var x1,x2,y1,y2 float32
-    var output float32
+    var x1,x2,y1,y2 float64
+    var output float64
     fmt.Println("Enter the first xcoordinate: ")
     fmt.Scanln(&x1)
     fmt.Println("Enter Second xcoordinate: ")
